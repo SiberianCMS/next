@@ -1,0 +1,762 @@
+/* GENERAL */
+body,
+.ionic-body {
+  color: $general-custom-text;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, div, p, span, a, * {
+  font-family: $font-family;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $general-custom-text;
+}
+
+.text-base {
+  font-size: $font-size-base;
+}
+
+.text-small {
+  font-size: $font-size-small;
+}
+
+.text-large {
+  font-size: $font-size-large;
+}
+
+button, input, select, textarea {
+  font-family: $font-family;
+}
+
+/** Modal background is opacified */
+ion-modal-view {
+  background-color: opacify($general-custom-bg, 1) !important;
+}
+
+/** 100vh height is important for iOS 14+ viewports */
+.platform-ios14,
+.platform-ios15,
+.platform-ios16,
+.platform-ios17,
+.platform-ios18 {
+  ion-side-menus {
+    height: 100vh !important;
+  }
+
+  /** Specific hint for ios & browser */
+  &.platform-browser {
+    ion-side-menus {
+      height: var(--app-height) !important;
+    }
+  }
+}
+
+ion-side-menu {
+  background-color: $homepage-custom-bg !important;
+}
+
+ion-side-menu-content {
+  color: $general-custom-text;
+  background-color: $general-custom-bg !important;
+  .general-custom-border {
+    border-color: $general-custom-border !important;
+  }
+}
+
+ion-content {
+  background-color: transparent !important;
+}
+
+/* HEADER / FOOTER */
+.bar {
+  &.bar-custom {
+    @include bar-style($bar-custom-bg, $bar-custom-border, $bar-custom-text);
+    &.bar-footer {
+      background-image: linear-gradient(180deg, $bar-custom-border, $bar-custom-border 50%, transparent 50%);
+    }
+  }
+}
+
+.bar-custom {
+  .button {
+    @include button-style($bar-custom-bg, $bar-custom-border, $bar-custom-active-bg, $bar-custom-active-border, $bar-custom-text);
+    @include button-clear($bar-custom-text, $bar-title-font-size);
+  }
+}
+
+/* HEADER TABS TOP */
+.tabs-top {
+  &.tabs-custom {
+    .tabs {
+      @include tab-style($bar-custom-bg, $bar-custom-border, $bar-custom-text);
+      border-color: transparent !important;
+    }
+  }
+}
+
+/* HOMEPAGE */
+.homepage-custom {
+  background: $homepage-custom-bg;
+  h2, p, span, i {
+    color: $homepage-custom-text;
+  }
+  &.translucent {
+    background: $homepage-custom-bg-translucent;
+  }
+  .translucent {
+    background: $homepage-custom-bg-translucent;
+  }
+  &.transparent {
+    background: transparent;
+  }
+  .transparent {
+    background: transparent;
+  }
+  &.border-custom {
+    border-color: $homepage-custom-border;
+  }
+  .border-custom {
+    border-color: $homepage-custom-border;
+  }
+}
+
+/* LIST */
+.list {
+  padding-top: 0;
+  .item-divider {
+    &.item-divider-custom {
+      background-color: $list-item-divider-custom-bg;
+      color: $list-item-divider-custom-text;
+      border: $list-item-divider-custom-border;
+      h2, p, span {
+        color: $list-item-divider-custom-text;
+      }
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+    box-shadow: none;
+    .item {
+      &.item-custom {
+        background-color: transparent;
+        &.active, &:active {
+          @include item-active-style(transparent, transparent);
+        }
+      }
+    }
+  }
+  .item {
+    &.item-custom {
+      @include item-style($list-item-custom-bg, $list-item-custom-border, $list-item-custom-text);
+      & h1, h2, h3, h4, h5, h6, p, .input-label, input, textarea, &.item-select select {
+        color: $list-item-custom-text;
+        background-color: transparent;
+      }
+      & input, textarea {
+        @include placeholder($list-item-custom-text)
+      }
+      &.translucent {
+        background-color: $list-item-custom-text-translucent;
+      }
+    }
+    .item-custom-bg {
+      background-color: $list-item-custom-text;
+    }
+  }
+}
+
+.item-text {
+  &.item-text-custom {
+    @include item-style($list-item-custom-bg, $list-item-custom-border, $list-item-custom-text);
+    * {
+      color: $list-item-custom-text;
+    }
+  }
+}
+
+.item-text-custom {
+  @include item-style-custom($list-item-custom-bg, $list-item-custom-border);
+}
+
+.item.active,
+.item.activated,
+.item-complex.active .item-content,
+.item-complex.activated .item-content,
+.item .item-content.active,
+.item .item-content.activated {
+  &.item-custom {
+    @include item-active-style($list-item-custom-bg-active, $list-item-custom-border-active);
+  }
+}
+
+.item-complex {
+  &.item-custom > .item-content {
+    @include item-style($list-item-custom-bg, $list-item-custom-border, $list-item-custom-text);
+    &.active, &:active {
+      @include item-active-style($list-item-custom-bg-active, $list-item-custom-border-active);
+    }
+  }
+}
+
+/* CARD */
+.card {
+
+  background-color: transparent;
+
+  .item-divider {
+    &.item-divider-custom {
+      background-color: $card-item-divider-custom-bg;
+      color: $card-item-divider-custom-text;
+      border: $card-item-divider-custom-border;
+      h2, p, span {
+        color: $card-item-divider-custom-text;
+      }
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+    box-shadow: none;
+    .item {
+      &.item-custom {
+        background-color: transparent;
+        &.active, &:active {
+          @include item-active-style(transparent, transparent);
+        }
+      }
+    }
+  }
+
+  .item {
+    &.item-custom {
+      @include item-style($card-item-custom-bg, $card-item-custom-border, $card-item-custom-text);
+      & h1, h2, h3, h4, h5, h6, p, .input-label, input, textarea, &.item-select select {
+        color: $card-item-custom-text;
+        background-color: transparent;
+      }
+      & input, textarea {
+        @include placeholder($card-item-custom-text)
+      }
+      &.active, &:active {
+        @include item-active-style($card-item-custom-bg-active, $card-item-custom-active-border);
+      }
+      &.translucent {
+        background-color: $card-item-custom-text-translucent;
+      }
+    }
+    .item-custom-bg {
+      background-color: $card-item-custom-bg;
+    }
+  }
+}
+
+/* BUTTONS */
+.button {
+  &.button-custom {
+    @include button-style($button-custom-bg, $button-custom-border, $button-custom-active-bg, $button-custom-active-border, $button-custom-text);
+    @include button-clear($button-custom-border);
+    @include button-outline($button-custom-border);
+  }
+
+  &.button-light-custom {
+    @include button-style($button-light-custom-bg, $button-light-custom-border, $button-light-custom-active-bg, $button-light-custom-active-border, $button-light-custom-text);
+    @include button-clear($button-light-custom-border);
+    @include button-outline($button-light-custom-border);
+  }
+
+  &.button-positive-custom {
+    @include button-style($button-positive-custom-bg, $button-positive-custom-border, $button-positive-custom-active-bg, $button-positive-custom-active-border, $button-positive-custom-text);
+    @include button-clear($button-positive-custom-border);
+    @include button-outline($button-positive-custom-border);
+  }
+
+  &.button-calm-custom {
+    @include button-style($button-calm-custom-bg, $button-calm-custom-border, $button-calm-custom-active-bg, $button-calm-custom-active-border, $button-calm-custom-text);
+    @include button-clear($button-calm-custom-border);
+    @include button-outline($button-calm-custom-border);
+  }
+
+  &.button-balanced-custom {
+    @include button-style($button-balanced-custom-bg, $button-balanced-custom-border, $button-balanced-custom-active-bg, $button-balanced-custom-active-border, $button-balanced-custom-text);
+    @include button-clear($button-balanced-custom-border);
+    @include button-outline($button-balanced-custom-border);
+  }
+
+  &.button-energized-custom {
+    @include button-style($button-energized-custom-bg, $button-energized-custom-border, $button-energized-custom-active-bg, $button-energized-custom-active-border, $button-energized-custom-text);
+    @include button-clear($button-energized-custom-border);
+    @include button-outline($button-energized-custom-border);
+  }
+
+  &.button-assertive-custom {
+    @include button-style($button-assertive-custom-bg, $button-assertive-custom-border, $button-assertive-custom-active-bg, $button-assertive-custom-active-border, $button-assertive-custom-text);
+    @include button-clear($button-assertive-custom-border);
+    @include button-outline($button-assertive-custom-border);
+  }
+
+  &.button-royal-custom {
+    @include button-style($button-royal-custom-bg, $button-royal-custom-border, $button-royal-custom-active-bg, $button-royal-custom-active-border, $button-royal-custom-text);
+    @include button-clear($button-royal-custom-border);
+    @include button-outline($button-royal-custom-border);
+  }
+
+  &.button-dark-custom {
+    @include button-style($button-dark-custom-bg, $button-dark-custom-border, $button-dark-custom-active-bg, $button-dark-custom-active-border, $button-dark-custom-text);
+    @include button-clear($button-dark-custom-border);
+    @include button-outline($button-dark-custom-border);
+  }
+}
+
+/* BADGES */
+.badge {
+  &.badge-custom {
+    @include badge-style($badge-custom-bg, $badge-custom-text);
+  }
+
+  &.badge-light-custom {
+    @include badge-style($badge-light-custom-bg, $badge-light-custom-text);
+  }
+
+  &.badge-positive-custom {
+    @include badge-style($badge-positive-custom-bg, $badge-positive-custom-text);
+  }
+
+  &.badge-calm-custom {
+    @include badge-style($badge-calm-custom-bg, $badge-calm-custom-text);
+  }
+
+  &.badge-balanced-custom {
+    @include badge-style($badge-balanced-custom-bg, $badge-balanced-custom-text);
+  }
+
+  &.badge-energized-custom {
+    @include badge-style($badge-energized-custom-bg, $badge-energized-custom-text);
+  }
+
+  &.badge-assertive-custom {
+    @include badge-style($badge-assertive-custom-bg, $badge-assertive-custom-text);
+  }
+
+  &.badge-royal-custom {
+    @include badge-style($badge-royal-custom-bg, $badge-royal-custom-text);
+  }
+
+  &.badge-dark-custom {
+    @include badge-style($badge-dark-custom-bg, $badge-dark-custom-text);
+  }
+}
+
+.tabs .tab-item {
+  .badge {
+    &.badge-custom {
+      @include badge-style($badge-custom-bg, $badge-custom-text);
+    }
+
+    &.badge-light-custom {
+      @include badge-style($badge-light-custom-bg, $badge-light-custom-text);
+    }
+
+    &.badge-positive-custom {
+      @include badge-style($badge-positive-custom-bg, $badge-positive-custom-text);
+    }
+
+    &.badge-calm-custom {
+      @include badge-style($badge-calm-custom-bg, $badge-calm-custom-text);
+    }
+
+    &.badge-balanced-custom {
+      @include badge-style($badge-balanced-custom-bg, $badge-balanced-custom-text);
+    }
+
+    &.badge-energized-custom {
+      @include badge-style($badge-energized-custom-bg, $badge-energized-custom-text);
+    }
+
+    &.badge-assertive-custom {
+      @include badge-style($badge-assertive-custom-bg, $badge-assertive-custom-text);
+    }
+
+    &.badge-royal-custom {
+      @include badge-style($badge-royal-custom-bg, $badge-royal-custom-text);
+    }
+
+    &.badge-dark-custom {
+      @include badge-style($badge-dark-custom-bg, $badge-dark-custom-text);
+    }
+  }
+}
+
+/** UTILS */
+.light,
+a.light {
+  &.light-custom {
+    color: $util-light-custom-text;
+  }
+}
+.light-bg {
+  &.light-bg-custom {
+    background-color: $util-light-custom-bg;
+  }
+}
+.light-border {
+  &.light-border-custom {
+    border-color: $util-light-custom-border;
+  }
+}
+
+.positive, a.positive {
+  &.positive-custom {
+    color: $util-positive-custom-text;
+  }
+}
+.positive-bg {
+  &.positive-bg-custom {
+    background-color: $util-positive-custom-bg;
+  }
+}
+.positive-border {
+  &.positive-border-custom {
+    border-color: $util-positive-custom-border;
+  }
+}
+
+.calm, a.calm {
+  &.calm-custom {
+    color: $util-calm-custom-text;
+  }
+}
+.calm-bg {
+  &.calm-bg-custom {
+    background-color: $util-calm-custom-bg;
+  }
+}
+.calm-border {
+  &.calm-border-custom {
+    border-color: $util-calm-custom-border;
+  }
+}
+
+.assertive, a.assertive {
+  &.assertive-custom {
+    color: $util-assertive-custom-text;
+  }
+}
+.assertive-bg {
+  &.assertive-bg-custom {
+    background-color: $util-assertive-custom-bg;
+  }
+}
+.assertive-border {
+  &.assertive-border-custom {
+    border-color: $util-assertive-custom-border;
+  }
+}
+
+.balanced, a.balanced {
+  &.balanced-custom {
+    color: $util-balanced-custom-text;
+  }
+}
+.balanced-bg {
+  &.balanced-bg-custom {
+    background-color: $util-balanced-custom-bg;
+  }
+}
+.balanced-border {
+  &.balanced-border-custom {
+    border-color: $util-balanced-custom-border;
+  }
+}
+
+.energized, a.energized {
+  &.energized-custom {
+    color: $util-energized-custom-text;
+  }
+}
+.energized-bg {
+  &.energized-bg-custom {
+    background-color: $util-energized-custom-bg;
+  }
+}
+.energized-border {
+  &.energized-border-custom {
+    border-color: $util-energized-custom-border;
+  }
+}
+
+.royal, a.royal {
+  &.royal-custom {
+    color: $util-royal-custom-text;
+  }
+}
+.royal-bg {
+  &.royal-bg-custom {
+    background-color: $util-royal-custom-bg;
+  }
+}
+.royal-border {
+  &.royal-border-custom {
+    border-color: $util-royal-custom-border;
+  }
+}
+
+.dark, a.dark {
+  &.dark-custom {
+    color: $util-dark-custom-text;
+  }
+}
+.dark-bg {
+  &.dark-bg-custom {
+    background-color: $util-dark-custom-bg;
+  }
+}
+.dark-border {
+  &.dark-border-custom {
+    border-color: $util-dark-custom-border;
+  }
+}
+
+/* CHECKBOX */
+.checkbox-custom {
+  background-color: $checkbox-general-custom-bg;
+  & h1, h2, h3, h4, h5, h6, span, p, a, textarea {
+    color: $checkbox-general-custom-text;
+  }
+}
+
+.checkbox-custom .checkbox {
+  @include checkbox-style($checkbox-off-custom-border, $checkbox-on-custom-bg, $checkbox-on-custom-border);
+}
+
+.checkbox-custom .checkbox input,
+.checkbox-custom .checkbox-icon {
+  &:before {
+    background: $checkbox-off-custom-bg;
+  }
+}
+
+.checkbox-custom .checkbox input:disabled:before,
+.checkbox-custom .checkbox input:disabled + .checkbox-icon:before {
+  border-color: $checkbox-off-custom-border;
+}
+
+.checkbox-custom .checkbox input:checked:after,
+input:checked + .checkbox-icon:after {
+  border-color: $checkbox-on-custom-text;
+}
+
+.checkbox-custom .checkbox input:disabled:checked:before,
+.checkbox-custom .checkbox input:disabled:checked + .checkbox-icon:before {
+  background: $checkbox-on-custom-border;
+}
+
+/* RADIO */
+.item-radio.radio-custom {
+  color: $radio-custom-text;
+  background-color: transparent;
+  &.item-complex .item-content, &.item-radio .item-content {
+    background-color: $radio-custom-bg;
+  }
+  & input:checked ~ .item-content {
+    background-color: $radio-custom-bg-active;
+  }
+}
+
+/* TOGGLE */
+.toggle-custom.item-toggle {
+  background-color: $toggle-general-custom-bg;
+  & h1, h2, h3, h4, h5, h6, span, p, a, textarea {
+    color: $toggle-general-custom-text;
+  }
+  .toggle {
+    @include toggle-style($toggle-on-custom-border, $toggle-on-custom-bg);
+    & input:checked + .track .handle {
+      background-color: $toggle-handle-on-custom-bg;
+    }
+    .track {
+      border-color: $toggle-off-custom-border;
+      background-color: $toggle-off-custom-bg;
+    }
+    .handle {
+      background-color: $toggle-handle-off-custom-bg;
+    }
+  }
+}
+
+/* TOOLTIP */
+.tooltip {
+  &.tooltip-custom {
+    color: $tooltip-custom-text;
+    background-color: $tooltip-custom-bg;
+    & i {
+      color: $tooltip-custom-bg;
+    }
+  }
+}
+
+/* SPINNER */
+.spinner-ios.spinner-custom,
+.spinner-ios-small.spinner-custom,
+.spinner-custom .spinner-ios,
+.spinner-custom .spinner-ios-small {
+  stroke: $spinner-custom-ios-bg;
+}
+
+.spinner-android.spinner-custom,
+.spinner-android-small.spinner-custom,
+.spinner-custom .spinner-android,
+.spinner-custom .spinner-android-small {
+  stroke: $spinner-custom-android-bg;
+}
+
+/* ICON */
+.icon-custom,
+.homepage-custom *.icon-custom {
+  color: $icon-custom !important;
+}
+
+.icon-active-custom,
+.homepage-custom *.icon-active-custom {
+  color: $icon-active-custom !important;
+}
+
+.icon-inactive-custom,
+.homepage-custom *.icon-inactive-custom {
+  color: $icon-inactive-custom !important;
+}
+
+.icon-warning-custom,
+.homepage-custom *.icon-warning-custom {
+  color: $icon-warning-custom !important;
+}
+
+.icon-danger-custom,
+.homepage-custom *.icon-danger-custom {
+  color: $icon-danger-custom !important;
+}
+
+/* SLIDER PAGER */
+.layout.colorize-pager {
+  .slider-pager {
+    background-color: $homepage-custom-bg;
+  }
+  .slider-pager-page {
+    color: darken($homepage-custom-bg, 25%);
+    &:active {
+      color: lighten($homepage-custom-bg, 25%);
+    }
+  }
+}
+
+/* IONIC POPUP */
+.platform-browser,
+.platform-overview,
+.platform-ios,
+.platform-android {
+  .popup {
+    width: 80vw;
+    overflow: hidden !important;
+    background-color: $dialog-custom-bg;
+    border-radius: 2px !important;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.6);
+    color: $dialog-custom-text;
+    max-width: 600px !important;
+  }
+
+  .popup-buttons {
+    padding: 0;
+    height: initial;
+    min-height: initial;
+  }
+
+  .popup button.button {
+    border: 0;
+    border-radius: 0;
+    border-top: 0;
+    border-radius: 0 !important;
+  }
+
+  .popup .popup-head {
+    padding: 20px 20px 0;
+    border-bottom: 0;
+    text-align: left;
+  }
+
+  .popup .popup-head .popup-title {
+    font-size: 1.4em;
+    color: $dialog-custom-text;
+  }
+
+  .popup .popup-body {
+    padding: 20px 20px;
+    border-bottom: 0;
+    text-align: left;
+  }
+
+  .popup button.button {
+    border: 0 !important;
+    background: none !important;
+    text-align: right;
+  }
+
+  .popup button.button:first-of-type {
+    border-radius: 0 !important;
+  }
+
+  .popup-buttons {
+    display: block;
+    text-align: right;
+    padding: 0 20px 0 0;
+    min-height: 48px;
+  }
+
+  .popup-buttons .button {
+    display: inline-block;
+    color: $dialog-custom-button !important;
+    text-transform: uppercase;
+    font-size: 14px !important;
+    text-align: right;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  .popup-buttons .button-positive {
+    color: $dialog-custom-button !important;
+    background: transparent !important;
+  }
+
+  .popup-buttons .button.activated {
+    box-shadow: none !important;
+    font-weight: bold;
+  }
+
+  .popup .popup-body input,
+  .popup .popup-body textarea {
+    background-color: transparent;
+    border-bottom: 2px solid $dialog-custom-button !important;
+    color: $dialog-custom-text !important;
+  }
+
+  .popup .popup-body input::-webkit-input-placeholder,
+  .popup .popup-body textarea::-webkit-input-placeholder {
+    color: #aaa;
+    text-indent: darken($dialog-custom-text, 20%);
+  }
+}
+
+.popup-buttons .button {
+  margin-left: 15px !important;
+  min-height: 20px !important;
+  margin-bottom: 15px !important;
+}
+
+/** InAppBrowser */
+.iab-footer-nav {
+  background-color: $bar-custom-bg !important;
+
+  .iab-footer-button {
+    color: $bar-custom-text !important;
+  }
+}

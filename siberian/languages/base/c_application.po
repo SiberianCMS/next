@@ -1,0 +1,536 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-01-09T15:29:57+00:00\n"
+"PO-Revision-Date: 2020-01-09T15:29:57+00:00\n"
+"Language: \n"
+
+# GMT 1578583797.3653
+msgctxt "application"
+msgid "Upload in progress ..."
+msgstr "Upload in progress ..."
+
+# GMT 1578584028.7122
+msgctxt "application"
+msgid "When not published, this feature is not accessible in menu & in-app links."
+msgstr "When not published, this feature is not accessible in menu & in-app links."
+
+# GMT 1578584028.7125
+msgctxt "application"
+msgid "Published"
+msgstr "Published"
+
+# GMT 1578584028.7128
+msgctxt "application"
+msgid "When disabled, this feature will only be accessible via in-app links."
+msgstr "When disabled, this feature will only be accessible via in-app links."
+
+# GMT 1578584028.7131
+msgctxt "application"
+msgid "Available from menu"
+msgstr "Available from menu"
+
+# GMT 1578585705.8167
+msgctxt "application"
+msgid "Here are displayed the features, and so the pages that you have added to your app. You can add content, change the position and remove any page anytime."
+msgstr "Here are displayed the features, and so the pages that you have added to your app. You can add content, change the position and remove any page anytime."
+
+# GMT 1578585705.817
+msgctxt "application"
+msgid "Here is the list of the available features you can add to your app. Some features can be added only once while some other features can be added multiple time."
+msgstr "Here is the list of the available features you can add to your app. Some features can be added only once while some other features can be added multiple time."
+
+# GMT 1578585705.8174
+msgctxt "application"
+msgid "See changes"
+msgstr "See changes"
+
+# GMT 1578566400.7749
+msgctxt "application"
+msgid "Sections"
+msgstr "Sections"
+
+# GMT 1578566400.7752
+msgctxt "application"
+msgid "All"
+msgstr "All"
+
+# GMT 1578566400.7755
+msgctxt "application"
+msgid "Text"
+msgstr "Text"
+
+# GMT 1578566400.7758
+msgctxt "application"
+msgid "Background"
+msgstr "Background"
+
+# GMT 1578566400.7761
+msgctxt "application"
+msgid "Border"
+msgstr "Border"
+
+# GMT 1578566400.7764
+msgctxt "application"
+msgid "Image"
+msgstr "Image"
+
+# GMT 1578566400.7769
+msgctxt "application"
+msgid "App"
+msgstr "App"
+
+# GMT 1578566400.7772
+msgctxt "application"
+msgid "Demo"
+msgstr "Demo"
+
+# GMT 1578567272.5754
+msgctxt "application"
+msgid "New position saved."
+msgstr "New position saved."
+
+# GMT 1580121495.6104
+msgctxt "application"
+msgid "Social sharing"
+msgstr "Social sharing"
+
+# GMT 1580204779.3085
+msgctxt "application"
+msgid "Subscription valid"
+msgstr "Subscription valid"
+
+# GMT 1580204779.3087
+msgctxt "application"
+msgid "MANAGE"
+msgstr "MANAGE"
+
+# GMT 1580204779.3089
+msgctxt "application"
+msgid "TRASH"
+msgstr "TRASH"
+
+# GMT 1580204779.3091
+msgctxt "application"
+msgid "Subscription required"
+msgstr "Subscription required"
+
+# GMT 1580378820.0463
+msgctxt "application"
+msgid "Choose a template (combination of colors, images and features, that you can change anytime) and a layout (the way your menu is designed and displayed)"
+msgstr "Choose a template (combination of colors, images and features, that you can change anytime) and a layout (the way your menu is designed and displayed)"
+
+# GMT 1580378820.0467
+msgctxt "application"
+msgid "Homepage options"
+msgstr "Homepage options"
+
+# GMT 1580378820.0468
+msgctxt "application"
+msgid "Layout options"
+msgstr "Layout options"
+
+# GMT 1580378820.0469
+msgctxt "application"
+msgid "The unified homepage tool helps you choose a homepage image/background that will be compatible will all device screen sizes."
+msgstr "The unified homepage tool helps you choose a homepage image/background that will be compatible will all device screen sizes."
+
+# GMT 1580378820.047
+msgctxt "application"
+msgid "Localization settings"
+msgstr "Localization settings"
+
+# GMT 1580378820.0471
+msgctxt "application"
+msgid "Choose the main country and currency of your app. It will be used for different aspects like the time zone, and the currency symbol."
+msgstr "Choose the main country and currency of your app. It will be used for different aspects like the time zone, and the currency symbol."
+
+# GMT 1580378820.0472
+msgctxt "application"
+msgid "Select a currency"
+msgstr "Select a currency"
+
+# GMT 1580378820.0474
+msgctxt "application"
+msgid "Select a default country"
+msgstr "Select a default country"
+
+# GMT 1580395205.3902
+msgctxt "application"
+msgid "Domain name"
+msgstr "Domain name"
+
+# GMT 1580395205.3906
+msgctxt "application"
+msgid "WebApp link"
+msgstr "WebApp link"
+
+# GMT 1580395239.4918
+msgctxt "application"
+msgid "Choose a pricing plan to get your app published on the stores"
+msgstr "Choose a pricing plan to get your app published on the stores"
+
+# GMT 1580395239.4922
+msgctxt "application"
+msgid "You can change your application name, as well as the bundle ID and the package name. These two last items are your app unique identifiers when being published on the App Store and Google Play, you don't need to edit them except if you know what you do."
+msgstr "You can change your application name, as well as the bundle ID and the package name. These two last items are your app unique identifiers when being published on the App Store and Google Play, you don't need to edit them except if you know what you do."
+
+# GMT 1580395239.4926
+msgctxt "application"
+msgid "Application ID"
+msgstr "Application ID"
+
+# GMT 1580395239.4929
+msgctxt "application"
+msgid "You can monetize your app by adding ad banners or interstitials that will be displayed to your app users."
+msgstr "You can monetize your app by adding ad banners or interstitials that will be displayed to your app users."
+
+# GMT 1580395239.493
+msgctxt "application"
+msgid "The source codes of your app, one version for iOS and one version for Android. Useful if you want to compile your apps manually by yourself through Xcode and Android Studio."
+msgstr "The source codes of your app, one version for iOS and one version for Android. Useful if you want to compile your apps manually by yourself through Xcode and Android Studio."
+
+# GMT 1580398369.5765
+msgctxt "application"
+msgid "Public URL of the privacy policy"
+msgstr "Public URL of the privacy policy"
+
+# GMT 1580398369.5768
+msgctxt "application"
+msgid "You can use <b>%s</b> as variable for your application name."
+msgstr "You can use <b>%s</b> as variable for your application name."
+
+# GMT 1580398369.5769
+msgctxt "application"
+msgid "New push message"
+msgstr "New push message"
+
+# GMT 1580398369.5770
+msgctxt "application"
+msgid "You have a new push message"
+msgstr "You have a new push message"
+
+# GMT 1580398369.5771
+msgctxt "application"
+msgid "When used, the application code/source will be locked & can only be updated through store updates, features content will not be affected"
+msgstr "When used, the application code/source will be locked & can only be updated through store updates, features content will not be affected"
+
+# GMT 1580398369.5772
+msgctxt "application"
+msgid "Lock application updates"
+msgstr "Lock application updates"
+
+# GMT 1580398369.5773
+msgctxt "application"
+msgid "The new version must be greater than the current one, please confirm if you really want to downgrade it."
+msgstr "The new version must be greater than the current one, please confirm if you really want to downgrade it."
+
+# GMT 1580398369.5774
+msgctxt "application"
+msgid "Current versionCode"
+msgstr "Current versionCode"
+
+# GMT 1580398369.5775
+msgctxt "application"
+msgid "The last 3 digits part of version code is increased by 1 after each build/source generation, and is reset to 1 when the version is changed"
+msgstr "The last 3 digits part of version code is increased by 1 after each build/source generation, and is reset to 1 when the version is changed"
+
+# GMT 1580398369.5776
+msgctxt "application"
+msgid "The new version must be greater than the current one, please ask your administrator to change it if there was an error."
+msgstr "The new version must be greater than the current one, please ask your administrator to change it if there was an error."
+
+# GMT 1580398369.5777
+msgctxt "application"
+msgid "Return to"
+msgstr "Return to"
+
+# GMT 1580398369.5778
+msgctxt "application"
+msgid "Font reset!"
+msgstr "Font reset!"
+
+# GMT 1580398369.5779
+msgctxt "application"
+msgid "Reset font!"
+msgstr "Reset font!"
+
+# GMT 1580398369.5780
+msgctxt "application"
+msgid "Display only test ads (useful when developing the application)"
+msgstr "Display only test ads (useful when developing the application)"
+
+# GMT 1580398369.5781
+msgctxt "application"
+msgid "AdMob app id is required!"
+msgstr "AdMob app id is required!"
+
+
+
+# GMT 1580398379.0000
+msgctxt "application"
+msgid "We are unable to find the application."
+msgstr "We are unable to find the application."
+
+# GMT 1580398379.0001
+msgctxt "application"
+msgid "Missing file."
+msgstr "Missing file."
+
+# GMT 1580398379.0002
+msgctxt "application"
+msgid "An unknown error occured during the file upload."
+msgstr "An unknown error occured during the file upload."
+
+# GMT 1580398379.0003
+msgctxt "application"
+msgid "You must upload a zip archive containing the required files."
+msgstr "You must upload a zip archive containing the required files."
+
+# GMT 1580398379.0004
+msgctxt "application"
+msgid "The file passwords.txt is missing"
+msgstr "The file passwords.txt is missing"
+
+# GMT 1580398379.0005
+msgctxt "application"
+msgid "The file cert.pfx or keystore.pks is missing"
+msgstr "The file cert.pfx or keystore.pks is missing"
+
+# GMT 1580398379.0006
+msgctxt "application"
+msgid "Error when creating a backup of the current keystore file!"
+msgstr "Error when creating a backup of the current keystore file!"
+
+# GMT 1580398379.0007
+msgctxt "application"
+msgid "Error when archiving previous keystore and passwords"
+msgstr "Error when archiving previous keystore and passwords"
+
+# GMT 1580398379.0008
+msgctxt "application"
+msgid "Error while converting to keystore file: %s"
+msgstr "Error while converting to keystore file: %s"
+
+# GMT 1580398379.0009
+msgctxt "application"
+msgid "Error while copying keystore file: %s"
+msgstr "Error while copying keystore file: %s"
+
+# GMT 1580398367.00010
+msgctxt "application"
+msgid "Error when opening keystore with provided password: %s"
+msgstr "Error when opening keystore with provided password: %s"
+
+# GMT 1580398367.00011
+msgctxt "application"
+msgid "Error while copying keystore file: %s"
+msgstr "Error while copying keystore file: %s"
+
+# GMT 1580398367.00012
+msgctxt "application"
+msgid "Error when opening keystore with provided password: %s"
+msgstr "Error when opening keystore with provided password: %s"
+
+# GMT 1580398367.00013
+msgctxt "application"
+msgid "The keystore is imported successfully!"
+msgstr "The keystore is imported successfully!"
+
+# GMT 1580398367.01
+msgctxt "application"
+msgid "The section below allows you to upload your own app signing key:"
+msgstr "The section below allows you to upload your own app signing key:"
+
+# GMT 1580398367.2
+msgctxt "application"
+msgid "You are about to change the keystore file used to sign your app."
+msgstr "You are about to change the keystore file used to sign your app."
+
+# GMT 1580398367.3
+msgctxt "application"
+msgid "Proceed cautiously, any mistake will prevent your app to be updated on the play store"
+msgstr "Proceed cautiously, any mistake will prevent your app to be updated on the play store"
+
+# GMT 1580398367.4
+msgctxt "application"
+msgid "Click here to select your zip package"
+msgstr "Click here to select your zip package"
+
+# GMT 1580398367.5
+msgctxt "application"
+msgid "OR"
+msgstr "OR"
+
+# GMT 1580398367.6
+msgctxt "application"
+msgid "Drop your zip package here"
+msgstr "Drop your zip package here"
+
+# GMT 1580398367.7
+msgctxt "application"
+msgid "Accepted key formats are pks & pfx, but you must upload a zip archive, you can download the structure examples below"
+msgstr "Accepted key formats are pks & pfx, but you must upload a zip archive, you can download the structure examples below"
+
+# GMT 1580398367.8
+msgctxt "application"
+msgid "Download PFX"
+msgstr "Download PFX"
+
+# GMT 1580398367.9
+msgctxt "application"
+msgid "Download PKS"
+msgstr "Download PKS"
+
+# GMT 1580398367.10
+msgctxt "application"
+msgid "Please note that example files are failing on purpose to prevent unintended keystore alteration."
+msgstr "Please note that example files are failing on purpose to prevent unintended keystore alteration."
+
+# GMT 1580398367.11
+msgctxt "application"
+msgid "Name"
+msgstr "Name"
+
+# GMT 1580398367.12
+msgctxt "application"
+msgid "Size"
+msgstr "Size"
+
+# GMT 1580398367.13
+msgctxt "application"
+msgid "Progress"
+msgstr "Progress"
+
+# GMT 1580398367.14
+msgctxt "application"
+msgid "Status"
+msgstr "Status"
+
+# GMT 1580398367.15
+msgctxt "application"
+msgid "Actions"
+msgstr "Actions"
+
+# GMT 1580398367.16
+msgctxt "application"
+msgid "Upload keystore"
+msgstr "Upload keystore"
+
+# GMT 1580398367.17
+msgctxt "application"
+msgid "This feature is not available, please contact your administrator."
+msgstr "This feature is not available, please contact your administrator."
+
+# GMT 1580398367.18
+msgctxt "application"
+msgid "From here you can choose the icon that will be displayed on the user device screen, as well as the back button design to navigate in your app."
+msgstr "From here you can choose the icon that will be displayed on the user device screen, as well as the back button design to navigate in your app."
+
+# GMT 1580398367.19
+msgctxt "application"
+msgid "Select your back button appearance"
+msgstr "Select your back button appearance"
+
+# GMT 1580398367.20
+msgctxt "application"
+msgid "OR USE A CUSTOM CLASS"
+msgstr "OR USE A CUSTOM CLASS"
+
+# GMT 1580398367.21
+msgctxt "application"
+msgid "Back button custom class"
+msgstr "Back button custom class"
+
+# GMT 1580398367.22
+msgctxt "application"
+msgid "Left toggle menu icon custom class"
+msgstr "Left toggle menu icon custom class"
+
+# GMT 1580398367.23
+msgctxt "application"
+msgid "Right toggle menu icon custom class"
+msgstr "Right toggle menu icon custom class"
+
+# GMT 1580398367.24
+msgctxt "application"
+msgid "Android APK/AAB version"
+msgstr "Android APK/AAB version"
+
+# GMT 1580398367.25
+msgctxt "application"
+msgid "Generate Android APK/AAB"
+msgstr "Generate Android APK/AAB"
+
+# GMT 1580398367.26
+msgctxt "application"
+msgid "Download latest AAB"
+msgstr "Download latest AAB"
+
+# GMT 1580398367.27
+msgctxt "application"
+msgid "Generate APK/AAB"
+msgstr "Generate APK/AAB"
+
+# GMT 1580398367.28
+#, mobile
+msgctxt "application"
+msgid "Unsupported feature"
+msgstr "Unsupported feature"
+
+# GMT 1580398367.29
+#, mobile
+msgctxt "application"
+msgid "This feature is not supported by your device and/or browser."
+msgstr "This feature is not supported by your device and/or browser."
+
+# GMT 1580398367.30
+msgctxt "application"
+msgid "You must create at least one app in order to manage your subscriptions."
+msgstr "You must create at least one app in order to manage your subscriptions."
+
+# GMT 1580398367.31
+msgctxt "application"
+msgid "NSUserTrackingUsageDescription (for AdMob & ATT)"
+msgstr "NSUserTrackingUsageDescription (for AdMob & ATT)"
+
+# GMT 1580398367.32
+msgctxt "application"
+msgid "Specifies the reason for your app to serve personalized ads and/or track personal data."
+msgstr "Specifies the reason for your app to serve personalized ads and/or track personal data."
+
+# GMT 1580398367.33
+msgctxt "application"
+msgid "Enforce ATT (App Tracking Transparency) modal for iOS 14+ Apps without AdMob."
+msgstr "Enforce ATT (App Tracking Transparency) modal for iOS 14+ Apps without AdMob."
+
+# GMT 1580398367.34
+msgctxt "application"
+msgid "Be careful with custom smtp, an incorrect configuration can break your outbound emails."
+msgstr "Be careful with custom smtp, an incorrect configuration can break your outbound emails."
+
+# GMT 1580398367.35
+msgctxt "application"
+msgid "Mobile website information & E-mail settings"
+msgstr "Mobile website information & E-mail settings"
+
+# GMT 1580398367.36
+msgctxt "application"
+msgid "Only applications with a push feature & with a published status available for global push notifications."
+msgstr "Only applications with a push feature & with a published status available for global push notifications."
+
+# GMT 1580398367.37
+msgctxt "application"
+msgid "Disable location service & permissions."
+msgstr "Disable location service & permissions."
+
+# GMT 1580398367.38
+msgctxt "application"
+msgid "Please note that if you are using a feature that requires location services & disable it here, these features will not work correctly."
+msgstr "Please note that if you are using a feature that requires location services & disable it here, these features will not work correctly."

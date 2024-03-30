@@ -1,0 +1,265 @@
+<?php
+
+use Fanwall\Model\Fanwall;
+use Fanwall\Model\Post;
+use Fanwall\Model\Approval;
+use Fanwall\Form\Post as FormPost;
+use Fanwall\Form\Settings as FormSettings;
+use Fanwall\Form\Post\Pin as FormPostPin;
+use Fanwall\Form\Post\Toggle as FormPostToggle;
+use Fanwall\Form\Post\Delete as FormPostDelete;
+
+global $layout;
+$layout = $this->getLayout();
+
+function getSection($name, $data = [])
+{
+    global $layout;
+    $html = $layout
+        ->addPartial("view_general", "core_view_default", "fanwall/application/tab/{$name}.phtml")
+        ->setData($data)
+        ->toHtml();
+
+    return $html;
+}
+
+$application = $this->getApplication();
+$optionValue = $this->getOptionValue();
+$valueId = $optionValue->getId();
+
+$appKey = $application->getGooglemapsKey();
+
+# FanWall
+$fanWall = (new Fanwall())->find($optionValue->getId(), "value_id");
+if (!$fanWall->getId()) {
+    // Creates a default entry with DB defaults!
+    $fanWall
+        ->setValueId($optionValue->getId())
+        ->save();
+    $fanWall = (new Fanwall())->find($optionValue->getId(), "value_id");
+}
+
+# Posts
+$posts = (new Post())->findAllWithCustomer(
+    [
+        'value_id = ?' => $optionValue->getId(),
+    ],
+    [
+        'fanwall_post.sticky DESC',
+        'fanwall_post.updated_at DESC',
+    ],
+    [
+        'all_scheduled' => true,
+    ]);
+
+$formPost = new FormPost();
+$formPost->setValueId($optionValue->getId());
+
+$formPostToggle = new FormPostToggle();
+$formPostToggle->setValueId($optionValue->getId());
+
+$formPostPin = new FormPostPin();
+$formPostPin->setValueId($optionValue->getId());
+
+$formPostDelete = new FormPostDelete();
+$formPostDelete->setValueId($optionValue->getId());
+
+# Settings
+$formSettings = new FormSettings();
+$formSettings->populate($fanWall->getData());
+$formSettings->setValueId($optionValue->getId());
+
+// Post templates
+$formid = $formPost->getAttrib('id');
+$uniqid = $formPost->getUniqid();
+$pvar = "p{$uniqid}";
+$imageTemplate = str_replace("%UNIQID%", $uniqid, FormPost::$imageTemplate);
+
+
+// Approval requests
+$approvals = (new Approval())->findAllWithPost($optionValue->getId());
+
+?>
+
+
+<div id="list"
+     class="fanwall">
+
+    <!-- GoogleMaps warning -->
+    <?php if (empty($appKey)): ?>
+        <div class="alert alert-warning">
+            <?php echo p__("fanwall", "To use nearby & maps tab you must set a Google Maps API key in %s.",
+                "<a href=\"/application/settings_apis\"><b>" . __("Settings") . " > " . __("API") . "</b></a>") ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs"
+        role="tablist">
+
+        <li role="presentation"
+            class="<?php echo ($posts->count() > 0) ? "active" : "" ?>">
+            <a href="#posts"
+               aria-controls="posts"
+               role="tab"
+               data-toggle="tab">
+                <i class="fa fa-suitcase"></i>
+                <?php echo p__("fanwall", "Posts") ?>
+            </a>
+        </li>
+
+        <li role="presentation">
+            <a href="#approval"
+               aria-controls="approval"
+               role="tab"
+               data-toggle="tab">
+                <i class="fa fa-check"></i>
+                <?php echo p__("fanwall", "Awaiting approval") ?>
+                <span style="<?php echo ($approvals->count() < 1) ? 'display: none;' : ''; ?>"
+                      rel="<?php echo $valueId ?>"
+                      class="badge color-red live-badge"><?php echo $approvals->count() ?></span>
+            </a>
+        </li>
+
+        <li role="presentation">
+            <a href="#design"
+               aria-controls="design"
+               role="tab"
+               data-toggle="tab">
+                <i class="fa fa-tag"></i>
+                <?php echo p__("fanwall", "Design") ?>
+            </a>
+        </li>
+
+        <li role="presentation"
+            class="<?php echo ($posts->count() <= 0) ? "active" : "" ?>">
+            <a href="#settings"
+               aria-controls="settings"
+               role="tab"
+               data-toggle="tab">
+                <i class="fa fa-sliders"></i>
+                <?php echo p__("fanwall", "Settings") ?>
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+
+        <!-- START POST TAB -->
+        <?php echo getSection("post", [
+            "option_value" => $optionValue,
+            "form_post" => $formPost,
+            "form_post_toggle" => $formPostToggle,
+            "form_post_pin" => $formPostPin,
+            "form_post_delete" => $formPostDelete,
+            "posts" => $posts,
+        ]); ?>
+        <!-- /END POST TAB -->
+
+        <!-- START APPROVAL TAB -->
+        <?php echo getSection('approval', [
+            'option_value' => $optionValue,
+            'approvals' => $approvals,
+        ]); ?>
+        <!-- /END APPROVAL TAB -->
+
+        <!-- START DESIGN TAB -->
+        <div role="tabpanel"
+             class="tab-pane"
+             id="design">
+            <?php echo $this->importBackground($optionValue, false, false); ?>
+        </div>
+        <!-- /END DESIGN TAB -->
+
+        <!-- START SETTINGS TAB -->
+        <div role="tabpanel"
+             class="tab-pane <?php echo ($posts->count() <= 0) ? "active" : "" ?>"
+             id="settings">
+            <div>
+                <h3 class="title-editor no-border-radius title-feature-indent">
+                    <?php echo p__("fanwall", "Settings"); ?>
+                </h3>
+                <div class="container-fluid subcontent content-feature">
+                    <?php echo $formSettings; ?>
+                </div>
+            </div>
+        </div>
+        <!-- /END SETTINGS TAB -->
+
+    </div>
+</div>
+
+<link href="/app/sae/modules/Fanwall/resources/design/desktop/flat/template/fanwall/application/edit.css"
+      media="screen"
+      rel="stylesheet"
+      type="text/css" />
+<script type="text/javascript">
+    search_placeholder = '<?php echo __js("Search ...", "'") ?>';
+</script>
+<script type="text/javascript"
+        src="/app/sae/modules/Fanwall/resources/design/desktop/flat/template/fanwall/application/edit.js"></script>
+
+<script type="text/javascript">
+    window.imageTemplate = `<?php echo str_replace("\n", "", $imageTemplate); ?>`;
+    window.settingsMaxImages = <?php echo $formSettings->getValue('max_images') ?>;
+    window.bindUploader = function (formId) {
+        $(formId + " input[name='files[]']").fileupload({
+            dataType: 'json',
+            add: function (el, data) {
+                data.url = '/template/crop/upload';
+                data.submit();
+            },
+            done: function (el, data) {
+                if(data.result.success) {
+                    let fanwallImage = imageTemplate;
+                    fanwallImage = fanwallImage.replace('%IMAGE_PATH%', data.result.files);
+                    fanwallImage = fanwallImage.replace('#THUMBNAIL_PATH#', tmp_directory + '/' + data.result.files);
+
+                    $(formId + ' .fanwall-images-container').append(fanwallImage);
+                    $(formId + ' .fanwall-images-container').sortable({
+                        handle: '.fanwall-image-handle',
+                        items: ' .fanwall-image',
+                        opacity: 0.7,
+                    });
+                } else if(data.result.error) {
+                    feature_form_error(data.result.message);
+                }
+            },
+            fail: function(el, data) {
+                if(data.result.error) {
+                    feature_form_error(data.result.message);
+                }
+            }
+        });
+
+        /** Delegate */
+        $(formId + " button[id$='image_uploader']").off('click');
+        $(formId + " button[id$='image_uploader']").on('click', function() {
+            if ($(formId + ' [name^=images]').length > window.settingsMaxImages) {
+                alert('You have reached the maximum upload count.');
+            } else {
+                $(formId + ' #image_uploader_hidden').trigger('click');
+            }
+        });
+
+        setTimeout(function() {
+            $(formId + ' .fanwall-images-container').sortable({
+                handle: '.fanwall-image-handle',
+                items: ' .fanwall-image',
+                opacity: 0.7
+            });
+        }, 200);
+    };
+
+    $(document).ready(function () {
+        window.bindUploader('#<?php echo $formid ?>');
+
+        $(document).off('click', '.fanwall-image-delete');
+        $(document).on('click', '.fanwall-image-delete', function() {
+            let el = $(this);
+            if (window.confirm('<?php echo p__js('fanwall', 'Please confirm you want to delete this image?', "'") ?>')) {
+                el.parents('.fanwall-image').remove();
+            }
+        });
+    });
+</script>

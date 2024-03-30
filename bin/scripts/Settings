@@ -1,0 +1,66 @@
+#!/usr/bin/env ruby
+
+require 'xcodeproj'
+
+module Settings
+  def Settings.alter_project(platform_path)
+    project_path = "#{platform_path}AppsMobileCompany.xcodeproj"
+
+    Loggy.info("OPENING PROJECT", project_path, true)
+
+    proj = Xcodeproj::Project.open(project_path)
+    entitlement_path = "AppsMobileCompany/Entitlements-$(CONFIGURATION).plist"
+
+    file = proj.new_file(entitlement_path.gsub("$(CONFIGURATION)", "Debug"))
+    file_release = proj.new_file(entitlement_path.gsub("$(CONFIGURATION)", "Release"))
+
+    attributes = {}
+    proj.targets.each do |target|
+      attributes[target.uuid] = {
+          "ProvisioningStyle" => "Manual",
+          "SystemCapabilities" => {
+              "com.apple.Push" => {
+                  "enabled" => 1
+              }
+          }
+      }
+      target.add_file_references([file, file_release])
+      Loggy.info("ADDED PUSH TO TARGET", target.uuid, true)
+    end
+    proj.root_object.attributes['TargetAttributes'] = attributes
+
+    proj.build_configurations.each do |config|
+      config.build_settings.store("CODE_SIGN_ENTITLEMENTS", entitlement_path.gsub("$(CONFIGURATION)", config.name))
+      config.build_settings.store("CODE_SIGN_ENTITLEMENTS[sdk*]", entitlement_path.gsub("$(CONFIGURATION)", config.name))
+    end
+
+    proj.save
+  end
+
+  def Settings.alter_pods(platform_path)
+    # Pods
+    pod_path = "#{platform_path}Pods/Pods.xcodeproj"
+    Loggy.info("OPENING PODS", pod_path, true)
+
+    file = File.read(pod_path + "/project.pbxproj")
+    new_contents = file.gsub("IPHONEOS_DEPLOYMENT_TARGET = 11.0;", "IPHONEOS_DEPLOYMENT_TARGET = 12.0;")
+    File.open(pod_path + "/project.pbxproj", "w") {|file| file.puts new_contents }
+
+    # Log
+    Loggy.info("CHANGED DEPLOYMENT TARGET", "11.0 to 12.0", true)
+
+    # Project
+    project_path = "#{platform_path}AppsMobileCompany.xcodeproj"
+
+    Loggy.info("OPENING PROJECT", project_path, true)
+    file = File.read(project_path + "/project.pbxproj")
+    new_contents = file.gsub("IPHONEOS_DEPLOYMENT_TARGET = 11.0;", "IPHONEOS_DEPLOYMENT_TARGET = 12.0;")
+    File.open(project_path + "/project.pbxproj", "w") {|file| file.puts new_contents }
+
+    # Log
+    Loggy.info("CHANGED DEPLOYMENT TARGET", "11.0 to 12.0", true)
+
+  end
+end
+
+

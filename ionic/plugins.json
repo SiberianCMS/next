@@ -1,0 +1,147 @@
+{
+  "default": {
+    "Promises": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Admob": {
+      "version": "latest",
+      "variables": {}
+    },
+    "AppVersion": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Badge": {
+      "version": "latest",
+      "variables": {}
+    },
+    "BarcodeScanner": {
+      "version": "latest",
+      "variables": {}
+    },
+    "BrowserTab": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Camera": {
+      "version": "~2.1.0",
+      "variables": {}
+    },
+    "Clipboard": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Device": {
+      "version": "~1.1.1",
+      "variables": {}
+    },
+    "File": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Geolocation": {
+      "version": "latest",
+      "variables": {}
+    },
+    "InAppBrowser": {
+      "version": "~1.2.0",
+      "variables": {}
+    },
+    "Keyboard": {
+      "version": "latest",
+      "variables": {}
+    },
+    "SocialSharing": {
+      "version": "latest",
+      "variables": {}
+    },
+    "StatusBar": {
+      "version": "~2.1.0",
+      "variables": {}
+    },
+    "LocalNotifications": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Insomnia": {
+      "version": "latest",
+      "variables": {}
+    },
+    "MusicControls": {
+      "version": "latest",
+      "variables": {}
+    },
+    "MediaNative": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Navigator": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Onesignal": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Permissions": {
+      "version": "latest",
+      "variables": {}
+    },
+    "CorePlugin": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Toast": {
+      "version": "latest",
+      "variables": {}
+    }
+  },
+  "ios": {
+    "InAppPurchase": {
+      "version": "latest"
+    },
+    "IosXhr": {
+      "version": "latest"
+    },
+    "Mediation": {
+      "version": "latest",
+      "variables": {}
+    },
+    "WebView": {
+      "version": "latest",
+      "variables": {}
+    }
+  },
+  "android": {
+    "Geofence": {
+      "version": "latest",
+      "variables": {}
+    },
+    "InAppPurchase": {
+      "version": "latest"
+    },
+    "IonicWebview": {
+      "version": "latest",
+      "variables": {}
+    },
+    "SplashScreen": {
+      "version": "latest",
+      "variables": {}
+    },
+    "SunmiPrinter": {
+      "version": "latest",
+      "variables": {}
+    },
+    "Mediation": {
+      "version": "latest",
+      "variables": {}
+    },
+    "WebView": {
+      "version": "latest",
+      "variables": {}
+    }
+  },
+  "browser": {
+  }
+}

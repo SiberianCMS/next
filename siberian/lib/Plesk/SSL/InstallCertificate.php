@@ -1,0 +1,89 @@
+<?php
+namespace Plesk\SSL;
+
+use Plesk\ApiRequestException;
+use Plesk\BaseRequest;
+use Plesk\HttpRequestContract;
+use Plesk\Node;
+use SimpleXMLElement;
+
+class InstallCertificate extends BaseRequest
+{
+    /**
+     * @var string
+     */
+    public $xml_packet = <<<EOT
+<?xml version="1.0"?>
+<packet>
+    <certificate>
+        <install>
+            <name>{NAME}</name>
+            {DESTINATION}
+            <content>
+                {CSR}
+                <pvt>{PVT}</pvt>
+                <cert>{CERT}</cert>
+                <ca>{CA}</ca>
+            </content>
+            {IP_ADDRESS}
+        </install>
+     </certificate>
+</packet>
+EOT;
+
+    /**
+     * @var array
+     */
+    protected $default_params = array(
+        'name' => null,
+        'csr' => null,
+        'pvt' => null,
+    );
+
+    /**
+     * @param array $config
+     * @param array $params
+     * @param HttpRequestContract $http
+     * @throws ApiRequestException
+     */
+    public function __construct(array $config, array $params = array(), HttpRequestContract $http = null)
+    {
+        if (isset($params['admin']) && $params['admin'] === true) {
+            $params['destination'] = new Node('admin');
+        }
+
+        if (isset($params['webspace'])) {
+            $params['destination'] = new Node('webspace', $params['webspace']);
+        }
+
+        if (isset($params['csr'])) {
+            $params['csr'] = new Node('csr', $params['csr']);
+        }
+
+        if (isset($params['ip-address'])) {
+            $params['ip_address'] = new Node('ip_address', $params['ip-address']);
+        } else {
+            $params['ip_address'] = new Node('ip_address');
+        }
+
+        if (!isset($params['destination'])) {
+            throw new ApiRequestException('admin or webspace parameter is required');
+        }
+
+        parent::__construct($config, $params, $http);
+    }
+
+    /**
+     * @param SimpleXMLElement $xml
+     * @return bool
+     * @throws ApiRequestException
+     */
+    protected function processResponse($xml)
+    {
+        if ((string) $xml->{'certificate'}->{'install'}->result->status === 'error') {
+            throw new ApiRequestException($xml->{'certificate'}->{'install'}->result);
+        }
+
+        return true;
+    }
+}

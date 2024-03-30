@@ -1,0 +1,50 @@
+{
+  "name": "Siberian",
+  "version": "5.0.10",
+  "lastversion": "5.0.9",
+  "nativeVersion": "20",
+  "apiVersion": "4",
+  "description": "Mobile App CMS",
+  "readme": "README.md",
+  "licence": "OSL",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.26.1",
+    "bower": "^1.8.14",
+    "clean-css": "^5.3.0",
+    "cli-color": "^2.0.2",
+    "command-exists": "^1.2.9",
+    "concat": "^1.0.3",
+    "cordova": "^11.0.0",
+    "cordova-js": "^6.1.0",
+    "cordova-lib": "^11.0.0",
+    "es-check": "^6.2.1",
+    "glob-array": "^1.0.0",
+    "glob-watcher": "^5.0.5",
+    "https": "^1.0.0",
+    "ionic": "^5.4.16",
+    "jshint": "^2.13.4",
+    "native-promise-deferred": "^1.0.1",
+    "node-notifier": "^10.0.1",
+    "node-sass": "^7.0.1",
+    "nopt": "^5.0.0",
+    "plugman": "^3.0.1",
+    "run-sequence": "^2.2.1",
+    "sass": "^1.49.11",
+    "shelljs": "^0.8.5",
+    "uglify-es": "^3.3.9",
+    "underscore": "^1.13.2",
+    "unorm": "^1.6.0",
+    "util": "^0.12.4",
+    "xcode": "^3.0.1"
+  },
+  "scripts": {
+    "dis_preversion": "./bin/preversion",
+    "dis_postversion": "./bin/postversion",
+    "postinstall": "./bin/install"
+  },
+  "bugs": {
+    "url": "https://github.com/xtraball/siberian/issues",
+    "email": "dev@xtraball.com"
+  }
+}

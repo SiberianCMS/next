@@ -1,0 +1,5 @@
+# For now we gonne go small with the repository, and may rely on CircleCI for the builds.
+ionic/
+android/
+browser/
+overview/

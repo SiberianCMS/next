@@ -1,0 +1,130 @@
+{
+  "platforms": {
+    "Android": {
+      "git": "git@github.com:Xtraball/cordova-android.git",
+      "branch": "siberian"
+    },
+    "Browser": {
+      "git": "git@github.com:Xtraball/cordova-browser.git",
+      "branch": "siberian"
+    },
+    "Ios": {
+      "git": "git@github.com:Xtraball/cordova-ios.git",
+      "branch": "siberian"
+    }
+  },
+  "plugins": {
+    "AdmobPro": {
+      "git": "git@github.com:Xtraball/AdmobPro.git",
+      "branch": "siberian"
+    },
+    "AppVersion": {
+      "git": "git@github.com:Xtraball/AppVersion.git",
+      "branch": "siberian"
+    },
+    "Badge": {
+      "git": "git@github.com:Xtraball/Badge.git",
+      "branch": "siberian"
+    },
+    "BarcodeScanner": {
+      "git": "git@github.com:Xtraball/BarcodeScanner.git",
+      "branch": "siberian"
+    },
+    "BrowserTab": {
+      "git": "git@github.com:Xtraball/BrowserTab.git",
+      "branch": "siberian"
+    },
+    "Camera": {
+      "git": "git@github.com:Xtraball/Camera.git",
+      "branch": "siberian"
+    },
+    "Clipboard": {
+      "git": "git@github.com:Xtraball/Clipboard.git",
+      "branch": "siberian"
+    },
+    "Device": {
+      "git": "git@github.com:Xtraball/Device.git",
+      "branch": "siberian"
+    },
+    "File": {
+      "git": "git@github.com:Xtraball/File.git",
+      "branch": "siberian"
+    },
+    "Geofence": {
+      "git": "git@github.com:Xtraball/Geofence.git",
+      "branch": "siberian"
+    },
+    "Geolocation": {
+      "git": "git@github.com:Xtraball/Geolocation.git",
+      "branch": "siberian"
+    },
+    "InAppBrowser": {
+      "git": "git@github.com:Xtraball/InAppBrowser.git",
+      "branch": "siberian"
+    },
+    "Insomnia": {
+      "git": "git@github.com:Xtraball/Insomnia.git",
+      "branch": "siberian"
+    },
+    "IonicWebview": {
+      "git": "git@github.com:Xtraball/IonicWebview.git",
+      "branch": "siberian"
+    },
+    "Keyboard": {
+      "git": "git@github.com:Xtraball/Keyboard.git",
+      "branch": "siberian"
+    },
+    "LocalNotifications": {
+      "git": "git@github.com:Xtraball/LocalNotifications.git",
+      "branch": "siberian"
+    },
+    "MediaNative": {
+      "git": "git@github.com:Xtraball/MediaNative.git",
+      "branch": "siberian"
+    },
+    "MusicControls": {
+      "git": "git@github.com:Xtraball/MusicControls.git",
+      "branch": "siberian"
+    },
+    "Navigator": {
+      "git": "git@github.com:Xtraball/Navigator.git",
+      "branch": "siberian"
+    },
+    "Permissions": {
+      "git": "git@github.com:Xtraball/Permissions.git",
+      "branch": "siberian"
+    },
+    "Promises": {
+      "git": "git@github.com:Xtraball/Promises.git",
+      "branch": "siberian"
+    },
+    "Siberian": {
+      "git": "git@github.com:Xtraball/PluginSiberian.git",
+      "branch": "siberian"
+    },
+    "SocialSharing": {
+      "git": "git@github.com:Xtraball/SocialSharing.git",
+      "branch": "siberian"
+    },
+    "SplashScreen": {
+      "git": "git@github.com:Xtraball/SplashScreen.git",
+      "branch": "siberian"
+    },
+    "StatusBar": {
+      "git": "git@github.com:Xtraball/StatusBar.git",
+      "branch": "siberian"
+    },
+    "WebView": {
+      "git": "git@github.com:Xtraball/WebView.git",
+      "branch": "siberian"
+    },
+    "Whitelist": {
+      "git": "git@github.com:Xtraball/Whitelist.git",
+      "branch": "siberian"
+    },
+    "Onesignal": {
+      "git": "git@github.com:Xtraball/Onesignal.git",
+      "branch": "siberian"
+    }
+  }
+}

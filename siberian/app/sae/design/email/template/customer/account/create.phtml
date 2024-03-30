@@ -1,0 +1,33 @@
+<?php
+$email = $this->getAdminEmail();
+?>
+<table>
+    <tr>
+        <td>
+            <p>
+                <?php echo __('Congratulations,'); ?>
+            </p>
+            <p>
+                <?php echo __('You have created your account. With this account, you will be able to enjoy great offers available in our application.'); ?>
+            </p>
+            <p>
+                <span><?php echo __('Here are your credentials:'); ?></span><br />
+                <span><?php echo __('Login:'); ?> <strong><?php echo $this->getCustomer()->getEmail() ?></strong></span><br />
+                <span><?php echo __('Password:'); ?> <strong><i></i><?php echo __('you know it!') ?></strong></span><br />
+            </p>
+            <?php if (!empty($email)) : ?>
+            <p>
+                <?php echo __('If you encounter any problems, do not hesitate to contact us:'); ?> <a href="mailto:<?php echo $email; ?>"><strong><?php echo $email; ?></strong></a>
+            </p>
+            <?php endif; ?>
+            <br />
+            <p>
+                <span>
+                    <?php echo __('See you soon,'); ?>
+                    <br />
+                    <?php echo $this->getApp() ?>
+                </span>
+            </p>
+        </td>
+    </tr>
+</table>

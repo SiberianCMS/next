@@ -1,0 +1,11 @@
+{
+  "name": "Acl",
+  "description": "",
+  "version": "5.0.0",
+  "dependencies": {
+    "system": {
+      "type": "SAE",
+      "version": "4.2.3"
+    }
+  }
+}

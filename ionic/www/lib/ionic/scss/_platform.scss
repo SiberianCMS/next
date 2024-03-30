@@ -1,0 +1,302 @@
+/**
+ * Platform
+ * --------------------------------------------------
+ * Platform specific tweaks
+ */
+
+:root {
+  --safe-area-inset-top: 0;
+  --safe-area-inset-right: 0;
+  --safe-area-inset-bottom: 0;
+  --safe-area-inset-left: 0;
+  --app-height: 100vh;
+}
+
+// iOS 11.0-11.2
+@supports (padding-top: constant(safe-area-inset-top)) {
+  :root {
+    --safe-area-inset-top: constant(safe-area-inset-top);
+    --safe-area-inset-right: constant(safe-area-inset-right);
+    --safe-area-inset-bottom: constant(safe-area-inset-bottom);
+    --safe-area-inset-left: constant(safe-area-inset-left);
+  }
+}
+
+// iOS 11.2+
+@supports (padding-top: env(safe-area-inset-top)) {
+  :root {
+    --safe-area-inset-top: calc(env(safe-area-inset-top) + 10px);
+    --safe-area-inset-right: calc(env(safe-area-inset-right) + 10px);
+    --safe-area-inset-bottom: calc(env(safe-area-inset-bottom) + 10px);
+    --safe-area-inset-left: calc(env(safe-area-inset-left) + 10px);
+  }
+}
+
+// Siberian overview editor!
+.platform-overview.platform-cordova {
+  --safe-area-inset-top: 1.5em;
+  --safe-area-inset-right: 0px;
+  --safe-area-inset-bottom: 0.5em;
+  --safe-area-inset-left: 0px;
+}
+
+
+.platform-overview.platform-cordova {
+
+  ion-side-menu-content {
+    border-radius: 20px;
+    box-shadow: none !important;
+    overflow: hidden;
+  }
+
+  ion-side-menus {
+    border-radius: 21px;
+  }
+
+  ion-modal-view {
+    border-radius: 20px;
+    box-shadow: none !important;
+  }
+
+  // iOS has a status bar which sits on top of the header.
+  // Bump down everything to make room for it. However, if
+  // if its in Cordova, and set to fullscreen, then disregard the bump.
+  &:not(.fullscreen) {
+    .bar-header:not(.bar-subheader) {
+      height: $bar-height + $ios-statusbar-height;
+      height: calc(var(--safe-area-inset-top) + #{$bar-height});
+
+      &.item-input-inset .item-input-wrapper {
+        margin-top: 19px !important;
+      }
+
+      > * {
+        margin-top: $ios-statusbar-height;
+        margin-top: var(--safe-area-inset-top);
+      }
+    }
+    .bar-header {
+      padding-left: calc(var(--safe-area-inset-left) + #{$bar-padding-portrait});
+      padding-right: calc(var(--safe-area-inset-right) + #{$bar-padding-portrait});
+
+      .buttons:last-child {
+        right: calc(var(--safe-area-inset-right) + #{$bar-padding-portrait});
+      }
+    }
+
+    .has-tabs, .bar-footer.has-tabs {
+      bottom : calc(var(--safe-area-inset-bottom) + #{$tabs-height});
+    }
+
+    .tabs-top > .tabs, .tabs.tabs-top {
+      top: $bar-height + $ios-statusbar-height;
+    }
+
+    .tabs {
+      padding-bottom: var(--safe-area-inset-bottom);
+      height: calc(var(--safe-area-inset-bottom) + 55px);
+
+    }
+    .has-header, .bar-subheader {
+      top: $bar-height + $ios-statusbar-height;
+      top: calc(var(--safe-area-inset-top) + #{$bar-height});
+    }
+    .has-subheader {
+      top: $bar-height + $bar-subheader-height + $ios-statusbar-height;
+
+      top: calc(var(--safe-area-inset-top) + #{$bar-height + $bar-subheader-height});
+    }
+    .has-header.has-tabs-top {
+      top: $bar-height + $tabs-height + $ios-statusbar-height;
+
+      top: calc(#{$bar-height + $tabs-height} + var(--safe-area-inset-top));
+    }
+    .has-header.has-subheader.has-tabs-top {
+      top: $bar-height + $bar-subheader-height + $tabs-height + $ios-statusbar-height;
+
+      top: calc(#{$bar-height + $bar-subheader-height + $tabs-height} + var(--safe-area-inset-right));
+    }
+
+    .has-footer {
+      bottom: calc(var(--safe-area-inset-bottom) + #{$bar-footer-height});
+    }
+  }
+  .popover {
+    .bar-header:not(.bar-subheader) {
+      height: $bar-height;
+      &.item-input-inset .item-input-wrapper {
+        margin-top: -1px;
+      }
+      > * {
+        margin-top: 0;
+      }
+    }
+    .has-header, .bar-subheader {
+      top: $bar-height;
+    }
+    .has-subheader {
+      top: $bar-height + $bar-subheader-height;
+    }
+  }
+  &.status-bar-hide {
+    // Cordova doesn't adjust the body height correctly, this makes up for it
+    margin-bottom: 20px;
+  }
+}
+/**
+ * Platform
+ * --------------------------------------------------
+ * Platform specific tweaks
+ */
+
+.platform-ios.platform-cordova {
+  // iOS has a status bar which sits on top of the header.
+  // Bump down everything to make room for it. However, if
+  // if its in Cordova, and set to fullscreen, then disregard the bump.
+  &:not(.fullscreen) {
+    .bar-header:not(.bar-subheader) {
+      height: $bar-height + $ios-statusbar-height;
+      height: calc(var(--safe-area-inset-top) + #{$bar-height});
+
+      &.item-input-inset .item-input-wrapper {
+        margin-top: 19px !important;
+      }
+
+      > * {
+        margin-top: $ios-statusbar-height;
+        margin-top: var(--safe-area-inset-top);
+      }
+    }
+    .bar-header {
+      padding-left: calc(var(--safe-area-inset-left) + #{$bar-padding-portrait});
+      padding-right: calc(var(--safe-area-inset-right) + #{$bar-padding-portrait});
+
+      .buttons:last-child {
+        right: calc(var(--safe-area-inset-right) + #{$bar-padding-portrait});
+      }
+    }
+
+    .has-tabs, .bar-footer.has-tabs {
+      bottom : calc(var(--safe-area-inset-bottom) + #{$tabs-height});
+    }
+
+    .tabs-top > .tabs, .tabs.tabs-top {
+      top: $bar-height + $ios-statusbar-height;
+    }
+
+    .tabs {
+      padding-bottom: var(--safe-area-inset-bottom);
+      height: calc(var(--safe-area-inset-bottom) + 55px);
+
+    }
+    .has-header, .bar-subheader {
+      top: $bar-height + $ios-statusbar-height;
+      top: calc(var(--safe-area-inset-top) + #{$bar-height});
+    }
+    .has-subheader {
+      top: $bar-height + $bar-subheader-height + $ios-statusbar-height;
+
+      top: calc(var(--safe-area-inset-top) + #{$bar-height + $bar-subheader-height});
+    }
+    .has-header.has-tabs-top {
+      top: $bar-height + $tabs-height + $ios-statusbar-height;
+
+      top: calc(#{$bar-height + $tabs-height} + var(--safe-area-inset-top));
+    }
+    .has-header.has-subheader.has-tabs-top {
+      top: $bar-height + $bar-subheader-height + $tabs-height + $ios-statusbar-height;
+
+      top: calc(#{$bar-height + $bar-subheader-height + $tabs-height} + var(--safe-area-inset-right));
+    }
+  }
+  .popover {
+    .bar-header:not(.bar-subheader) {
+      height: $bar-height;
+      &.item-input-inset .item-input-wrapper {
+        margin-top: -1px;
+      }
+      > * {
+        margin-top: 0;
+      }
+    }
+    .has-header, .bar-subheader {
+      top: $bar-height;
+    }
+    .has-subheader {
+      top: $bar-height + $bar-subheader-height;
+    }
+  }
+  &.status-bar-hide {
+    // Cordova doesn't adjust the body height correctly, this makes up for it
+    margin-bottom: 20px;
+  }
+}
+
+@media (orientation: landscape) {
+  .item {
+    padding: $item-padding calc(var(--safe-area-inset-right) + #{$item-padding});
+
+    &.item-avatar {
+      padding-left: calc(var(--safe-area-inset-right) + #{$item-avatar-width} + #{$item-padding} + #{$item-padding});
+    }
+
+    &.item-radio {
+      padding: 0;
+    }
+
+    &.item-checkbox {
+      padding-left: ($item-padding * 2) + $checkbox-width;
+    }
+
+    .badge {
+      right: calc(var(--safe-area-inset-right) + 32px)
+    }
+  }
+  .item-icon-left {
+    padding-left: calc(var(--safe-area-inset-left) + 54px);
+
+    .icon {
+      left: calc(var(--safe-area-inset-left) + 11px);
+    }
+  }
+  .item-icon-right {
+    padding-right: calc(var(--safe-area-inset-right) + 54px);
+    .icon {
+      right: calc(var(--safe-area-inset-right) + 11px);
+    }
+  }
+
+  .item-complex, a.item.item-complex, button.item.item-complex {
+    padding: 0;
+
+    .item-content {
+      padding: $item-padding
+      calc(var(--safe-area-inset-right) + #{(ceil( ($item-padding * 3) + ($item-padding / 3)) - 5)})
+      $item-padding
+      calc(var(--safe-area-inset-left) + #{$item-padding});
+    }
+  }
+
+  .item-left-edit.visible.active {
+    @include translate3d(calc(var(--safe-area-inset-left) + 8px), 0, 0);
+  }
+  .list-left-editing .item-left-editable .item-content,
+  .item-left-editing.item-left-editable .item-content {
+    @include translate3d(calc(var(--safe-area-inset-left) + 50px), 0, 0);
+  }
+
+  .item-right-edit{
+    right: var(--safe-area-inset-right);
+  }
+
+
+  .platform-ios.platform-browser.platform-ipad {
+    position: fixed; // required for iPad 7 Safari
+  }
+}
+
+.platform-c:not(.enable-transitions) * {
+  // disable transitions on grade-c devices (Android 2)
+  -webkit-transition: none !important;
+  transition: none !important;
+}

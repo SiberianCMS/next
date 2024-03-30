@@ -1,0 +1,11 @@
+{
+  "name": "Firewall",
+  "description": "",
+  "version": "5.0.4",
+  "dependencies": {
+    "system": {
+      "type": "SAE",
+      "version": "4.14.9"
+    }
+  }
+}

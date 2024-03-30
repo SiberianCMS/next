@@ -1,0 +1,95 @@
+<?php
+
+$optionValue = $this->getCurrentOptionValue();
+$imageGallery = $this->getCurrentImageGallery();
+$typeId = $imageGallery->getTypeId();
+
+switch ($typeId) {
+    case 'instagram':
+        $title = __('Instagram');
+        $className = 'fa fa-instagram';
+        break;
+    case 'picasa':
+        $title = __('Picasa');
+        $className = 'icofont icofont-social-picasa';
+        break;
+    case 'flickr':
+        $title = __('Flickr');
+        $className = 'fa fa-flickr';
+        break;
+    default: // 'custom'!
+        $title = __('User');
+        $className = 'fa fa-camera';
+        break;
+}
+
+?>
+
+<tr class="gallery-item"
+    rel="<?php echo $imageGallery->getGalleryId(); ?>">
+    <td>
+        <i class="fa fa-sort gallery-handle"></i>
+    </td>
+    <td>
+        <div class="btn color-blue">
+            <i title="<?php echo $title; ?>"
+               class="media-image-icon <?php echo $className; ?>"></i>
+        </div>
+    </td>
+    <td>
+        <span>
+            <input type="text"
+                   name="name_<?php echo $imageGallery->getGalleryId(); ?>"
+                   value="<?php echo $imageGallery->getName(); ?>"
+                   placeholder="<?php echo __('Gallery Name') ?>"
+                   class="input-flat"/>
+        </span>
+        <br/>
+    </td>
+    <td class="col-sm-4">
+        <?php
+        switch ($typeId) {
+            case 'flickr':
+                echo $this->getLayout()->addPartial('row_flickr_' . $imageGallery->getId(), 'admin_view_default', 'media/application/gallery/image/edit/row/flickr.phtml')
+                    ->setCurrentImageGallery($imageGallery)
+                    ->setCurrentOptionValue($optionValue)
+                    ->toHtml();
+                break;
+            case 'custom':
+                echo $this->getLayout()->addPartial('row_custom_' . $imageGallery->getId(), 'admin_view_default', 'media/application/gallery/image/edit/row/custom.phtml')
+                    ->setCurrentImageGallery($imageGallery)
+                    ->setCurrentOptionValue($optionValue)
+                    ->toHtml();
+                break;
+            case 'instagram':
+                echo $this->getLayout()->addPartial('row_instagram_' . $imageGallery->getId(), 'admin_view_default', 'media/application/gallery/image/edit/row/instagram.phtml')
+                    ->setCurrentImageGallery($imageGallery)
+                    ->setCurrentOptionValue($optionValue)
+                    ->toHtml();
+                break;
+        }
+        ?>
+    </td>
+    <td class="col-sm-3"
+         style="text-align: right;">
+        <input type="hidden"
+               name="value_id"
+               value="<?php echo $optionValue->getId(); ?>"/>
+        <input type="hidden"
+               name="id"
+               value="<?php echo $imageGallery->getGalleryId(); ?>"/>
+        <input type="hidden"
+               id="label_<?php echo $imageGallery->getGalleryId(); ?>"
+               name="label"
+               value=""/>
+        <button type="button"
+                class="bt-margin validate btn save_image color-blue"
+                rel="<?php echo $imageGallery->getGalleryId(); ?>">
+            <?php echo __('Save') ?>
+        </button>
+        <button type="button"
+                class="bt-margin color-red red btn delete_image">
+            <i class="fa fa-times"></i>
+        </button>
+    </td>
+</tr>
