@@ -1,0 +1,43 @@
+<script type="module">
+  import { html, render, Component } from 'https://esm.sh/htm/preact/standalone'
+
+  class App extends Component {
+    lastIndex = 0;
+
+    addTodo() {
+      const {todos = []} = this.state;
+      this.setState({todos: todos.concat(`Item n.${++this.lastIndex}`)});
+    }
+
+    removeTodo(item) {
+      return () => {
+        const {todos = []} = this.state;
+        this.setState({todos: todos.filter(todo => todo !== item)});
+      }
+    }
+
+    render({page}, {todos = []}) {
+      return html`
+        <div class="app">
+          <${Header} name="ToDo's (${page})"/>
+          <button onClick=${() => this.addTodo()}>Add Todo</button>
+          <ul>
+            ${todos.map(todo => html`
+              <li key=${todo} onClick=${this.removeTodo(todo)}>${todo}</li>
+            `)}
+          </ul>
+
+          <${Footer}>footer content here<//>
+        </div>
+      `;
+    }
+  }
+
+  const Header = ({name}) => html`<h1>${name} List</h1>`
+
+  const Footer = props => html`
+    <footer ...${props}/>`
+
+  render(html`
+    <${App} page="All"/>`, document.getElementById('root-container'));
+</script>
